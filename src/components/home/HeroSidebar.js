@@ -9,7 +9,7 @@ const Sidebar = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   bottom: 100%;
@@ -83,8 +83,6 @@ function HeroSidebar() {
   let [titleAppear, setTitleAppear] = useState(false)
   let [menuAppear, setMenuAppear] = useState(false)
   let [bookAppear, setBookAppear] = useState(false)
-
-  console.log(titleAppear)
 
   setTimeout(() => {
     setAppear(true)
