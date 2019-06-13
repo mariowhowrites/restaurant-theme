@@ -12,6 +12,7 @@ export default function MenuPicture({
       style={{
         width: "50%",
         position: "relative",
+        overflow: "hidden",
       }}
     >
       {!selectedItem ? (
@@ -51,7 +52,7 @@ function AnimatedPicture({
   console.log(selectedItem, currentItem)
 
   let [animate, setAnimate] = useState(false)
-  const animationTime = 5000
+  const animationTime = 500
 
   setTimeout(() => {
     setCurrentItem(selectedItem)
@@ -72,19 +73,20 @@ function AnimatedPicture({
 
   const slideInStyles = {
     position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
     bottom: "100%",
-    transition: `bottom ${animationTime}ms ease-in`,
+    opacity: 0,
+    transition: `bottom ${animationTime /
+      2}ms ease-in, opacity ${animationTime / 2}ms ease-in-out`,
   }
 
   const transitionStyles = {
     entering: {
       bottom: 0,
+      opacity: 1,
     },
     entered: {
       bottom: 0,
+      opacity: 1,
     },
   }
 
