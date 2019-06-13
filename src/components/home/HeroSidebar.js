@@ -93,7 +93,6 @@ function HeroSidebar() {
       in={appear}
       timeout={750}
       onEntered={() => {
-        console.log("sidebar is in")
         setTitleAppear(true)
       }}
     >
